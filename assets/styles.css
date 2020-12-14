@@ -6,6 +6,7 @@
 body{
     font-family: 'Andika New Basic', sans-serif;
     background-color: var(--main-bg-color);
+    color: var(--header-color);
 }
 :root{
     --main-bg-color: #f1e3dd;
@@ -89,8 +90,18 @@ hr{
 .location-card{
     padding: 1rem;
     margin: 1rem;
-    border: 1px solid black;
+    margin-top: 3rem;
+    border: 1px solid var(--header-color);
     width: 28%;
+    text-align: center;
+}
+img{
+    padding: 1rem;
+    height: 200px;
+    width: 200px;
+    position: relative;
+    top: -50px;
+    border: white solid 2px;
 }
 .search{
     text-align: left;
@@ -99,5 +110,5 @@ hr{
     font-size: 0.75rem;
 }
 .location-name{
-    height: 150px;
+    height: 120px;
 }

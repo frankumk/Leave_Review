@@ -23,7 +23,6 @@ const _Places = ({locations, reviews})=>{
                                 {console.log(location.id)}
                                 <p id='wait-time'>AVG WAIT TIME: {waitTimeAvg(location.id)} minutes</p>
                                 <button>Reviews</button>
-                                <img />
                             </div>
                         )
                     })

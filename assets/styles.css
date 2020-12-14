@@ -112,3 +112,9 @@ img{
 .location-name{
     height: 120px;
 }
+button{
+    background-color: var(--header-color);
+    color: white;
+    height: 2rem;
+    width: 4rem;
+}

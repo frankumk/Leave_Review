@@ -5,6 +5,7 @@ import {Provider } from 'react-redux'
 import {connect} from 'react-redux'
 import Nav from './Nav'
 import Places from './Places'
+import Search from './Search'
 import store from './store'
 
 
@@ -18,10 +19,10 @@ class _App extends Component{
                 <div id='header'>
                     <h1>Meter</h1>
                     <p>Check the line before you go. Leave a review.</p>
-                    <input type='text' id='search' placeholder='search' name='search'/>
+                    <Search />
                 </div>
                 <div id='format'>
-                <Nav />
+                    <Nav />
                     <Places />
                 </div>
             </div>

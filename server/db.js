@@ -18,6 +18,9 @@ const Location = db.define('location',{
     },
     city: {
         type: STRING
+    },
+    img: {
+        type: STRING
     }
 })
 
@@ -49,7 +52,7 @@ const syncAndSeed = async() =>{
     )
 
     const [InNOut, Dotties, Convention,UNLV, SpaceMountain, Maverick]=await Promise.all(
-        [{name:'In N Out',city: 'Los Angeles'},{name:'Dotties True Blue Cafe',city:'San Francisco'},{name:'Convention Center',city:'Las Vegas'},{name:'University of Nevada',city: 'Las Vegas'},{name:'Space Mountain',city: 'Orlando'},{name:'Maverick',city:'Sandusky'}]
+        [{name:'In N Out',city: 'Los Angeles',img: 'in n out.jpg'},{name:'Dotties True Blue Cafe',city:'San Francisco',img: 'dotties.jpeg'},{name:'Convention Center',city:'Las Vegas',img: 'CCC.jpg'},{name:'University of Nevada',city: 'Las Vegas',img:"unlvcov.jpg"},{name:'Space Mountain',city: 'Orlando',img:'spacemtn.jpg'},{name:'Maverick',city:'Sandusky',img: 'maverick.jpg'}]
         .map(obj=>Location.create(obj))
     )
 

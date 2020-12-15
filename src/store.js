@@ -27,6 +27,9 @@ const store = createStore((state=initialState,action)=>{
         // state = {...state, search: action.search, filteredLocations: locations.filter((loc)=>loc.name===action.search)}
         // console.log(filteredLocations);
     }
+    if(action.type==='HOME'){
+        state={...state, selectedLoc: '', view: 'locations'}
+    }
     return state;
 })
 

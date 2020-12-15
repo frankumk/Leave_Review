@@ -18,12 +18,12 @@ const _Places = ({locations, reviews, search, selectLoc})=>{
                     .map(location=>{
                         return (
                             <div className='location-card' key={location.id}>
-                                <img src={location.img} alt={location.name} />
+                                <img className='loc-img' src={location.img} alt={location.name} />
                                 <h2 className="location-name">{location.name}</h2>
                                 <h4>{location.city}</h4>
                                 {/* {console.log(location.id)} */}
                                 <p id='wait-time'>AVG WAIT TIME: {waitTimeAvg(location.id)} minutes</p>
-                                <button onClick={()=>selectLoc(location)}>Reviews</button>
+                        <button onClick={()=>selectLoc(location)}>Reviews</button>
                             </div>
                         )
                     })

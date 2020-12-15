@@ -101,13 +101,28 @@ hr{
     width: 28%;
     text-align: center;
 }
-img{
+.loc-img{
     padding: 1rem;
     height: 200px;
     width: 200px;
     position: relative;
     top: -50px;
     border: white solid 2px;
+}
+.selected-img{
+    padding: 1rem;
+    height: 200px;
+    width: 200px;
+    border: white solid 2px;
+}
+.current-list{
+    margin: 1rem;
+    padding: 1rem;
+    margin-left: 0rem;
+    border: 2px solid white;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
 }
 .search{
     text-align: left;

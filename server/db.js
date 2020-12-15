@@ -57,12 +57,12 @@ const syncAndSeed = async() =>{
     )
 
     await Promise.all([
-        Review.create({userName: 'Hulk', review: 'The fries are terrible', stars: 3, waitTime: 20,locationId:1}),
-        Review.create({userName: 'Wonder Woman', review: 'Line is long', stars: 4, waitTime: 15,locationId:1}),
-        Review.create({userName: 'Super Man', review: 'Worth the wait', stars: 5, waitTime: 45,locationId:2}),
-        Review.create({userName: 'Bat Man', review: 'Best Pancakes Ever', stars: 4, waitTime: 60,locationId:2}),
-        Review.create({userName: 'Spider Man', review: 'Epic',stars: 5, waitTime: 30,locationId:5}),
-        Review.create({userName: 'Iron Man', review: 'threw up',stars: 1, waitTime: 20,locationId:5})
+        Review.create({userName: 'Hulk', review: 'The fries are terrible', stars: 3, waitTime: 20,locationId:InNOut.id}),
+        Review.create({userName: 'Wonder Woman', review: 'Line is long', stars: 4, waitTime: 15,locationId:InNOut.id}),
+        Review.create({userName: 'Super Man', review: 'Worth the wait', stars: 5, waitTime: 45,locationId:Dotties.id}),
+        Review.create({userName: 'Bat Man', review: 'Best Pancakes Ever', stars: 4, waitTime: 60,locationId:Dotties.id}),
+        Review.create({userName: 'Spider Man', review: 'Epic',stars: 5, waitTime: 30,locationId:Maverick.id}),
+        Review.create({userName: 'Iron Man', review: 'threw up',stars: 1, waitTime: 20,locationId:Maverick.id})
     ])
 
     InNOut.categoryId = restaurants.id;

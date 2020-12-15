@@ -29,7 +29,7 @@ class _App extends Component{
     }
 
     render(){
-        const {search,selectedLoc}=this.props
+        const {search,selectedLoc,view}=this.props
         return(
             <div>
                 <div id='header'>
@@ -39,7 +39,10 @@ class _App extends Component{
                 </div>
                 <div id='format'>
                     <Nav />
-                    <Places /> 
+                    {
+                       view==='locations'? <Places /> : <SelectedLoc />
+
+                    }
                 </div>
             </div>
         )

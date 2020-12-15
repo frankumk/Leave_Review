@@ -4,11 +4,10 @@ const initialState = {
     categories: [],
     locations: [],
     reviews: [],
-    view: '',
+    view: 'locations',
     selectedLoc: {},
     selectedCat: {},
     search: '',
-    filteredLocations: [],
 }
 const store = createStore((state=initialState,action)=>{
     if(action.type==='LOAD'){
@@ -21,7 +20,7 @@ const store = createStore((state=initialState,action)=>{
         state={...state, selectedCat: action.cat}
     }
     if(action.type==='SET_LOC'){
-        state={...state, selectedLoc: action.loc}
+        state={...state, selectedLoc: action.loc, view: 'selectedLocation'}
     }
     if(action.type==='SEARCH'){
         state = {...state, search: action.search}

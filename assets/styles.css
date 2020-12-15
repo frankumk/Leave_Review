@@ -87,6 +87,12 @@ hr{
     left: 25%;
 
 }
+#location-view{
+    width: 75%;
+    margin-top: 20rem;
+    position: absolute;
+    left: 30%;
+}
 .location-card{
     padding: 1rem;
     margin: 1rem;
@@ -117,4 +123,8 @@ button{
     color: white;
     height: 2rem;
     width: 4rem;
+}
+textarea{
+    width: 300px;
+    height:150px;
 }

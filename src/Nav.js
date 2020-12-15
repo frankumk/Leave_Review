@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 const _Nav=({categories})=>{
+    
     return (
         <div id="sidebar">
                     <h2>Choose a Category</h2>

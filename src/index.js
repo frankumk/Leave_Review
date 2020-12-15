@@ -7,23 +7,39 @@ import Nav from './Nav'
 import Places from './Places'
 import Search from './Search'
 import store from './store'
+import SelectedLoc from './SelectedLoc'
 
 
 class _App extends Component{
+    constructor(){
+        super(),
+        this.handleSearch = this.handleSearch.bind(this);
+    }
+
     componentDidMount(){
         this.props.getReviews()
     }
+
+    handleSearch(e){
+        console.log(e.target.value)
+        this.props.updateSearch(e.target.value.toLowerCase())
+        console.log(this.props.search)
+        //this.setState({search: e.target.value.toLowerCase()});
+        //console.log(this.state.search);
+    }
+
     render(){
+        const {search,selectedLoc}=this.props
         return(
             <div>
                 <div id='header'>
                     <h1>Meter</h1>
                     <p>Check the line before you go. Leave a review.</p>
-                    <Search />
+                    <Search search={search} handleSearch={this.handleSearch}/>
                 </div>
                 <div id='format'>
                     <Nav />
-                    <Places />
+                    <Places /> 
                 </div>
             </div>
         )
@@ -45,6 +61,12 @@ const App = connect(
                     categories
                 })
             },
+            updateSearch: (search)=>{
+                dispatch({
+                    type: 'SEARCH',
+                    search
+                })
+            }
 
         }
     }

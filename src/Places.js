@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-const _Places = ({locations, reviews})=>{
+const _Places = ({locations, reviews, search})=>{
 
     const waitTimeAvg = (loc)=>{
         const sameLoc = reviews.filter((review)=>review.locationId === loc);
@@ -14,7 +14,11 @@ const _Places = ({locations, reviews})=>{
     return(
         <div id='place-div'>
                 {
-                    locations.map(location=>{
+                    locations
+                    .filter(loc=>{
+                        return loc.name.toLowerCase().includes(search);
+                    })
+                    .map(location=>{
                         return (
                             <div className='location-card' key={location.id}>
                                 <img src={location.img} alt={location.name} />

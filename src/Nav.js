@@ -26,7 +26,7 @@ class _Nav extends Component{
                         {
                             this.props.categories.map(category=>{
                                 return (
-                                    <a href={`#${category.id}`} key={category.id}><li className='cat'>{category.name.toUpperCase()}</li></a>
+                                    <a href={`#${category.id}`} key={category.id} onClick={()=>this.props.home()}><li className='cat'>{category.name.toUpperCase()}</li></a>
                                 )
                             })
                         }
@@ -43,6 +43,11 @@ const mapDispatchToProps = (dispatch) => {
             dispatch({
                 type: 'SET_CAT',
                 cat
+            })
+        },
+        home: ()=>{
+            dispatch({
+                type: 'HOME',
             })
         }
     }

@@ -1,7 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import SelectedLoc from './SelectedLoc';
 
-const _Places = ({locations, reviews, search, selectLoc})=>{
+const _Places = ({locations, reviews, search, selectLoc, selectedCat})=>{
     const waitTimeAvg = (loc)=>{
         const sameLoc = reviews.filter((review)=>review.locationId === loc);
         const sum = sameLoc.reduce((accum,rev) =>(accum+rev.waitTime),0);
@@ -12,6 +13,13 @@ const _Places = ({locations, reviews, search, selectLoc})=>{
         <div id='place-div'>
                 {
                     locations
+                    .filter(loc=>{
+                        if(Object.keys(selectedCat).length > 0){
+                            return loc.categoryId===selectedCat.id;
+                        }else{
+                            return loc;
+                        }
+                    })
                     .filter(loc=>{
                         return loc.name.toLowerCase().includes(search);
                     })

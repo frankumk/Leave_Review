@@ -35,7 +35,9 @@ class _App extends Component{
                 <div id='header'>
                     <h1>Meter</h1>
                     <p>Check the line before you go. Leave a review.</p>
-                    <Search search={search} handleSearch={this.handleSearch}/>
+                    {
+                        view==='locations'? <Search search={search} handleSearch={this.handleSearch}/> : ''
+                    }
                 </div>
                 <div id='format'>
                     <Nav />

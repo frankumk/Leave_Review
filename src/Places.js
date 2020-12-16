@@ -11,11 +11,11 @@ const _Places = ({locations, reviews, search, selectLoc, selectedCat})=>{
 
     return(
         <div id='place-div'>
-                {
+                {   
                     locations
                     .filter(loc=>{
-                        if(Object.keys(selectedCat).length > 0){
-                            return loc.categoryId===selectedCat.id;
+                        if(selectedCat.length > 0){
+                            return loc.categoryId===selectedCat*1;
                         }else{
                             return loc;
                         }

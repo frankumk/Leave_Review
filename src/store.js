@@ -6,7 +6,7 @@ const initialState = {
     reviews: [],
     view: 'locations',
     selectedLoc: {},
-    selectedCat: {},
+    selectedCat: '',
     search: '',
 }
 const store = createStore((state=initialState,action)=>{

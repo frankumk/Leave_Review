@@ -1,8 +1,22 @@
-import React from 'react'
+import React, {Component} from 'react'
 import {connect} from 'react-redux'
 
-const _Nav=({categories})=>{
-    
+class _Nav extends Component{
+    constructor(props){
+        super(props)
+    }
+
+    componentDidMount(){
+
+          window.addEventListener('hashchange', ()=> {
+              //console.log(window.location.hash.slice(1))
+            this.props.selectCat(window.location.hash.slice(1));
+          })
+          //this.props.selectCat(window.location.hash.slice(1));
+    }
+
+
+    render(){
     return (
         <div id="sidebar">
                     <h2>Choose a Category</h2>
@@ -10,16 +24,28 @@ const _Nav=({categories})=>{
                     <ul id="sidebar-list">
                         <a href=''><li className='cat'>All</li></a>
                         {
-                            categories.map(category=>{
+                            this.props.categories.map(category=>{
                                 return (
-                                    <a href={`#${category.name}`} key={category.id}><li className='cat'>{category.name.toUpperCase()}</li></a>
+                                    <a href={`#${category.id}`} key={category.id}><li className='cat'>{category.name.toUpperCase()}</li></a>
                                 )
                             })
                         }
                     </ul>
         </div>
     )
+}
 
 }
-const Nav = connect(state=>state)(_Nav)
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        selectCat: (cat)=>{
+            dispatch({
+                type: 'SET_CAT',
+                cat
+            })
+        }
+    }
+}
+const Nav = connect(state=>state,mapDispatchToProps)(_Nav)
 export default Nav;

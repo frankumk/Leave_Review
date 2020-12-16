@@ -47,28 +47,15 @@ app.get('/api/locations',async(req,res,next)=>{
 
 app.post('/api/reviews',async(req,res,next)=>{
     try{
+        console.log(req.body);
         const newPost = await Review.create(req.body)
-        await Review.save();
-        res.send(await Reviews.findAll())
+        await newPost.save();
+        res.send(newPost)
     }catch(ex){
         next(ex)
     }
 })
 
-app.delete('/api/reviews',async(req,res,next)=>{
-    try{
-        //console.log(req.body);
-        const deleteReview = await Review.findOne({
-            where: {
-                name: req.body.name
-            }
-        })
-        await deleteReview.destroy();
-        res.send(await Review.findAll());
-    }catch(ex){
-        next(ex);
-    }
-})
 
 app.get('/api/locations/:locid',async(req,res,next)=>{
     try{

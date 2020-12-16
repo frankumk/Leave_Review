@@ -17,7 +17,6 @@ const _Nav=({categories})=>{
                             })
                         }
                     </ul>
-                    <button>Add</button>
         </div>
     )
 

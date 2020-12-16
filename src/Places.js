@@ -5,7 +5,7 @@ const _Places = ({locations, reviews, search, selectLoc})=>{
     const waitTimeAvg = (loc)=>{
         const sameLoc = reviews.filter((review)=>review.locationId === loc);
         const sum = sameLoc.reduce((accum,rev) =>(accum+rev.waitTime),0);
-        return sum / sameLoc.length || 0;
+        return Math.round(sum / sameLoc.length) || 0;
     }
 
     return(

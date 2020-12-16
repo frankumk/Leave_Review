@@ -142,4 +142,21 @@ button{
 textarea{
     width: 300px;
     height:150px;
+    z-index: 1000;
+}
+
+@media screen and (max-width: 940px){
+    .location-card{
+        padding: 1rem;
+        margin: 1rem;
+        margin-top: 3rem;
+        width: 40%;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 1040px){
+    h2{
+        font-size: 1rem;
+    }
 }

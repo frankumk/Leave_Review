@@ -30,6 +30,9 @@ const store = createStore((state=initialState,action)=>{
     if(action.type==='HOME'){
         state={...state, selectedLoc: '', view: 'locations'}
     }
+    if(action.type==='CREATE_REVIEW'){
+        state={...state, reviews: [...state.reviews, action.dataRev]}
+    }
     return state;
 })
 
